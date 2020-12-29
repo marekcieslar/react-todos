@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100%;
+  max-height: 500px;
+  background-color: aliceblue;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+header h1 {
+  margin-bottom: 15px;
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+.TodoList h2 {
+  margin-bottom: 15px;
+}
