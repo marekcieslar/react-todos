@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<header>
+  <h1
+    data-testid="header-title"
+  >
+    awesome title for renderer
+  </h1>
+</header>
+`;
