@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import quoteContext from '../contexts/quoteContext';
 
 function QuoteForm() {
@@ -6,6 +6,12 @@ function QuoteForm() {
   const [author, setAuthor] = useState('');
 
   const [quoteList, setQuoteList] = useContext(quoteContext);
+
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    textRef.current.focus();
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,6 +32,7 @@ function QuoteForm() {
       <div>
         <label htmlFor="text">text: </label>
         <input
+          ref={textRef}
           type="text"
           name="text"
           id="text"
