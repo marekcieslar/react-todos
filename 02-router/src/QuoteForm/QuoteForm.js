@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
+import { Prompt } from 'react-router-dom';
 import quoteContext from '../contexts/quoteContext';
 
 function QuoteForm() {
@@ -29,6 +30,15 @@ function QuoteForm() {
 
   return (
     <form className="quote-form" onSubmit={handleSubmit}>
+      <Prompt
+        when={!!text || !!author}
+        message={(location) => {
+          console.log('location', location);
+          return location.pathname.startsWith('/quote-form')
+            ? true
+            : 'are you shore to exit with some form filled and loose your data?';
+        }}
+      ></Prompt>
       <div>
         <label htmlFor="text">text: </label>
         <input
