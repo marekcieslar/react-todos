@@ -7,7 +7,9 @@ const reducer = (state = initialState, action) => {
     case 'DEPOSIT':
       return { balance: state.balance + action.payload };
     case 'WITHDRAW':
-      return { balance: state.balance - action.payload };
+      if (state.balance - action.payload > 0)
+        return { balance: state.balance - action.payload };
+      return state;
     default:
       return state;
   }
